@@ -1,0 +1,346 @@
+int led[10]={5,10,13,A0,11,A1,A2,A3,A4,A5};
+int rstt=0,l=0,h=1;
+void setup()
+{
+  pinMode(5,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(13,OUTPUT);
+  pinMode(A0,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(A1,OUTPUT);
+  pinMode(A2,OUTPUT);
+  pinMode(A3,OUTPUT);
+  pinMode(A4,OUTPUT);
+  pinMode(A5,OUTPUT);
+  attachInterrupt(1,rst,RISING);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A4,l);
+  digitalWrite(A2,l);
+  digitalWrite(A0,l);
+  digitalWrite(A3,l); 
+  digitalWrite(5,l);
+  digitalWrite(A1,l);
+  digitalWrite(11,l);
+  digitalWrite(A5,l);
+}
+
+void rst()
+{
+  rstt=0;
+}
+void loop()
+{
+  if(!rstt)
+{
+  a();
+delay(1);
+i();
+delay(1);
+x();
+delay(1);
+a();
+delay(1);
+r();
+delay(1);
+  p();
+delay(1);
+u();
+delay(1);
+e();
+delay(1);
+rstt++;
+}
+}
+void e()
+{
+  digitalWrite(5,h);
+  digitalWrite(A1,h);
+  digitalWrite(11,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(1500);
+  digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A4,l);
+  digitalWrite(A2,l);
+  digitalWrite(A0,l);
+  digitalWrite(A3,l); 
+  digitalWrite(5,l);
+  digitalWrite(A1,l);
+  digitalWrite(11,l);
+  digitalWrite(A5,l);
+}
+void u()
+{
+  /* digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  delayMicroseconds(300); 
+    digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,h);
+  delayMicroseconds(150);
+  digitalWrite(A2,l);
+  digitalWrite(A3,h);
+  delayMicroseconds(130);
+  digitalWrite(A3,l);
+    digitalWrite(A4,h);
+    delayMicroseconds(120);
+      digitalWrite(A4,l);
+        digitalWrite(A5,h);
+            delayMicroseconds(200);
+        digitalWrite(A5,l);        
+ digitalWrite(A4,h);
+ digitalWrite(A3,h);
+        delayMicroseconds(120);
+        digitalWrite(A4,l);
+          digitalWrite(A3,h);
+          digitalWrite(A2,h);
+    delayMicroseconds(130);
+      digitalWrite(A3,l);
+        digitalWrite(A2,h);
+       delayMicroseconds(150);  
+               digitalWrite(A2,l);
+          digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  delayMicroseconds(300);
+    digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);  */
+   digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+      digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+delayMicroseconds(1500);
+   digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+      digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);
+}
+void p()
+{   digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+    delayMicroseconds(300);
+      digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  delayMicroseconds(1500);
+   digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+      digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);
+  
+}
+void x()
+{
+  for(int i=0;i<10;i++)
+  {
+    if(i>0);
+  {digitalWrite(led[i-1],l);
+  digitalWrite(led[9-i+1],l);  
+  }
+  digitalWrite(led[i],h);
+  digitalWrite(led[9-i],h); 
+ delayMicroseconds(150); 
+}
+    digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);
+}
+void r()
+{
+  digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+    delayMicroseconds(300);
+      digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+for(int i=0;i<5;i++)
+{
+  if(i>0)
+    digitalWrite(led[9-i+1],l); 
+  digitalWrite(led[9-i],h); 
+  delayMicroseconds(150);
+}
+    digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+      digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);
+}
+void i()
+{
+    digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+      digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);
+}
+void a()
+{
+    digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);  
+  delayMicroseconds(1500);
+     digitalWrite(5,h);
+  digitalWrite(10,h);
+  digitalWrite(13,h);
+  digitalWrite(A0,h);
+  digitalWrite(11,h);
+  digitalWrite(A1,h);
+  digitalWrite(A2,h);
+  digitalWrite(A3,h);
+  digitalWrite(A4,h);
+  digitalWrite(A5,h);
+  delayMicroseconds(300);  
+    digitalWrite(5,l);
+  digitalWrite(10,l);
+  digitalWrite(13,l);
+  digitalWrite(A0,l);
+  digitalWrite(11,l);
+  digitalWrite(A1,l);
+  digitalWrite(A2,l);
+  digitalWrite(A3,l);
+  digitalWrite(A4,l);
+  digitalWrite(A5,l);  
+}
